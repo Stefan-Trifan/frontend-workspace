@@ -13,7 +13,12 @@
         <h1 id="titulo">ej p28 maquina entradas</h1>
     </section>
     <script>
+        function crearEntrada(nombre, evento, precio = 15){
+            precio += precio * 10/100
 
+            return `===============================\n 🎟️  ${evento}\n Asistente: ${nombre}\n Precio final: ${precio} €\n===============================`
+        }
+        console.log(crearEntrada("Steve", "Laster"))
     </script>
 </body>
 </html>
