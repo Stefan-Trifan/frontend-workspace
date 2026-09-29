@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="/assets/default_workspace/style.css">
+</head>
+<body style="font-family: system-ui; padding: 8px">
+    <ul id="lista">
+        <li>Manzana</li>
+        <li>Platano</li>
+        <li>Cereza</li>
+    </ul>
+    <button id="anadir">Añadir fruta</button>
+    <p id="aviso"></p>
+    <script>
+        const lista = document.getElementById("lista")
+        const aviso = document.getElementById("aviso")
+
+        // UN solo listener para todos los <li>, presentes y futuros
+        lista.addEventListener("click", () => {
+            const li = event.target.closest("li")
+            if (!li || !lista.contains(li)) return; // se ha pulsado fuera de un <li>
+            li.style.textDecoration = li.style.textDecoration ? "" : "line-through"
+            aviso.textContent = `Has pulsado: ${li.textContent}`
+        })
+
+        // Los elementos nuevos funcionan sin registrar nada más: esa es la gracia
+        document.getElementById("anadir").addEventListener("click", () => {
+            const li = document.createElement("li")
+            li.textContent = "Fruta " + (lista.children.length + 1)
+            lista.appendChild(li)
+        })
+
+    </script>
+    </script>
+</body>
