@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="/assets/default_workspace/style.css">
+    <style>
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">teconiverto-tunumero.com</h1>
+    <section id="section">
+        <p>Introduce un numero: </p>
+        <input id="input" type="text" placeholder="numerito">
+        <button id="boton">Pulsar ya</button>
+        <p>Resultado es: <span id="resultado">0</span> Fahrenheits</p>
+    </section>
+    <script>
+        const inputElement = document.getElementById("input")
+        const botonElement = document.getElementById("boton")
+        const resultadoElement = document.getElementById("resultado")
+
+        botonElement.addEventListener("click", () => {
+            const celsius = Number(inputElement.value)
+            const fahrenheit = celsiusAFahrenheit(celsius)
+            resultadoElement.textContent = fahrenheit
+        })
+
+        function celsiusAFahrenheit(c) {
+            return c * 9 / 5 + 32
+        }
+    </script>
+</body>
+</html>

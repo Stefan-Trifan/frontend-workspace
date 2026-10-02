@@ -13,7 +13,18 @@
         <h1 id="titulo">2</h1>
     </section>
     <script>
+        function crearAlgo() {
+            let valor = 0
 
+            return function () {
+                valor++
+                console.log(valor)
+            }
+        }
+        const algo = crearAlgo
+        algo()
+        algo()
+        algo()
     </script>
 </body>
 </html>

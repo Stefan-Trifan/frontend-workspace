@@ -7,12 +7,51 @@
     <title>10</title>
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="/assets/default_workspace/style.css">
+    <style>
+        #section{
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        button{
+            margin-bottom: 0px;
+        }
+
+        #contador{
+            font-size: 32px;
+        }
+
+        .col2{
+            width: 40px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <section>
-        <h1 id="titulo">10</h1>
+    <section id="section">
+        <div>
+            <button id="boton_restar">- 1</button>
+        </div>
+        <div class="col2">
+            <span id="contador">0</span>
+        </div>
+        <div>
+            <button id="boton_sumar">+ 1</button>
+        </div>
     </section>
+
     <script>
+        let boton_sumar_element = document.getElementById("boton_sumar")
+        let boton_restar_element = document.getElementById("boton_restar")
+
+        boton_sumar_element.addEventListener("click", () => {
+            document.getElementById("contador").textContent++
+        })
+
+        boton_restar_element.addEventListener("click", () => {
+            document.getElementById("contador").textContent--
+        })
 
     </script>
 </body>

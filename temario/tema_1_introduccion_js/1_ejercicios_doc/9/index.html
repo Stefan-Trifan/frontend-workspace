@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="/assets/default_workspace/style.css">
+    <style>
+        .red {
+            background-color: red;
+        }
+
+        #section {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body id="body">
+    <section id="section">
+        <h1 id="titulo">9 👻</h1>
+        <button id="button">Pulsa! No tengas miedo </button>
+    </section>
+    <script>
+        let tituloElement = document.getElementById("titulo")
+        let buttonElement = document.getElementById("button")
+
+        buttonElement.addEventListener("click", () => {
+            tituloElement.innerHTML = "<strong>Feliz Haugelin 🎃</strong>"
+            document.body.classList.add("red")
+        })
+    </script>
+</body>
+</html>

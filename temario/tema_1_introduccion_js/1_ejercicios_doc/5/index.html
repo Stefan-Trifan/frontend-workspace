@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="/assets/default_workspace/style.css">
+    <style>
+        section{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1 id="titulo">5</h1>
+        <p>Introduce tu nota (0 - 10)</p>
+        <input id="input" placeholder="nota" type="text">
+        <button id="button">enviar</button>
+        <p>Resultado: <span id="resultado"></span></p>
+    </section>
+    <script>
+        const buttonElement = document.getElementById("button")
+        const inputElement = document.getElementById("input")
+        const resultadoElement = document.getElementById("resultado")
+
+        buttonElement.addEventListener("click", () => {
+            const nota = Number(inputElement.value)
+            resultadoElement.textContent = devolverResultado(nota)
+        })
+
+        function devolverResultado(nota){
+            if (nota < 0 || nota > 10 || Number.isNaN(nota)) {
+                return "Introduce un numero valido"
+            } else if (nota < 5) {
+                return "Suspenso"
+            } else if (nota < 7) {
+                return "Aprobado"
+            } else if (nota < 9) {
+                return "Notable"
+            } else {
+                return "Sobresaliente"
+            }
+        }
+    </script>
+</body>
+</html>
